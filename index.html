@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <title>Alphabetical Antics Checker</title>
+    <link rel="stylesheet" type="text/css" href="custom.css">
+</head>
+
+<body>
+    <div id="app" align="center"> 
+        <h2>Alphabetical Antics Checker</h2>
+
+        <form name="myForm" id="searchForm">
+            <input type="text" class="search-bar" required v-model="searchText" placeholder="Enter Word" />
+            <select v-model="type">
+                <option value="1">Palindrome</option>
+                <option value="2">Isogram</option>
+                <option value="3">Pangram</option>
+            </select>
+            <button class="search-button" v-on:click="process();" v-if="isSearchBarEmpty()">Go</button> 
+        </form>
+        <hr>
+        {{ result }}
+
+    </div>
+    
+    <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+    <script src="custom.js"></script>
+</body>
+
+</html>
